@@ -1,6 +1,6 @@
 // Canonical origin for metadata, sitemap and robots.
 // Update after the production domain is confirmed.
-export const siteUrl = "https://bara-ah-alshobaki.vercel.app";
+export const siteUrl = "https://baraahalshobaki.vercel.app";
 
 export const locales = ["ar", "en"] as const;
 export type Locale = (typeof locales)[number];

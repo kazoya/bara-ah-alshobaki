@@ -1,7 +1,7 @@
 # AGENT_HANDOFF — براءة الشوبكي / Bara'ah Alshobaki
 
 **Project path:** `C:\bara.ah_alshobaki`  
-**Site URL (placeholder):** `https://bara-ah-alshobaki.vercel.app`  
+**Site URL:** `https://baraahalshobaki.vercel.app` (Vercel team muqasa)  
 **Status:** Concept demo under development — not a finished commercial catalogue.
 
 ---

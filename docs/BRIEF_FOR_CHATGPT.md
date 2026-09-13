@@ -10,7 +10,7 @@ You are continuing work on a **premium bilingual Next.js 16 + Tailwind 4 concept
 
 - Local: `C:\bara.ah_alshobaki`
 - Pattern references: `C:\zahaalmajali` (i18n/theme/a11y), `C:\apcasystems` (particle inspiration)
-- Placeholder production URL: `https://bara-ah-alshobaki.vercel.app`
+- Production URL: `https://baraahalshobaki.vercel.app` (GitHub: `https://github.com/kazoya/bara-ah-alshobaki`)
 - Products: oils (زيوت), vinegar (خل), botanical extracts (مستخلصات نباتية)
 
 ## Already built (do not rebuild from scratch)
