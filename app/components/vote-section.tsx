@@ -94,16 +94,23 @@ export function VoteSection({
             <span>{content.countLabel}</span>
           </p>
 
+          <p className="vote__support-note">{content.supportNote}</p>
+
           <div className="vote__actions">
             <a
               className="button button--gold"
               href={support.buyMeACoffee}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               {content.coffeeCta} <ArrowOut />
             </a>
-            <a className="button button--ghost-light" href={support.paypalMailto}>
+            <a
+              className="button button--ghost-light"
+              href={support.paypalCheckout}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {content.paypalCta}
             </a>
             <button

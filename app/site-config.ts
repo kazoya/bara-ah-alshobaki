@@ -48,10 +48,20 @@ export const contact = {
   country: "JO",
 } as const;
 
-/** Interest / "buy me a coffee" links for the vote section. */
+/**
+ * Interest / support links for the vote section.
+ * Amount is fixed at USD 1 — support for developing the marketing platform.
+ */
 export const support = {
+  amountUsd: 1,
+  /** Direct page for Asrawi’s Buy Me a Coffee account. */
   buyMeACoffee: "https://www.buymeacoffee.com/Asrawi612",
   paypalEmail: "innervision2016@gmail.com",
-  paypalMailto: "mailto:innervision2016@gmail.com?subject=Bara%27ah%20Alshobaki%20demo%20support",
+  /**
+   * PayPal checkout (not mailto): opens payment for $1 to the business email,
+   * labelled as marketing-platform development support.
+   */
+  paypalCheckout:
+    "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=innervision2016%40gmail.com&item_name=Support%20for%20developing%20the%20marketing%20platform%20%28%D8%AF%D8%B9%D9%85%20%D9%84%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D9%85%D9%86%D8%B5%D8%A9%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%29&amount=1.00&currency_code=USD&no_shipping=1&no_note=0",
   voteStorageKey: "bara-ah-interest-votes",
 } as const;

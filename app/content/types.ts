@@ -124,6 +124,8 @@ export type Dictionary = {
       eyebrow: string;
       title: SplitHeading;
       lede: string;
+      /** Clarifies $1 support is for developing the marketing platform. */
+      supportNote: string;
       coffeeCta: string;
       paypalCta: string;
       voteCta: string;

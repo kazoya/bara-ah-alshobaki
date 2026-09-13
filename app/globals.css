@@ -588,6 +588,13 @@ h1 em, h2 em { color: var(--accent); font-style: normal; font-weight: 400; }
 }
 .vote__copy h2 { margin: 16px 0 18px; font-size: clamp(2.2rem, 4vw, 3.4rem); }
 .vote__note { color: var(--on-band-faint); font-size: 0.88rem; line-height: 1.7; }
+.vote__support-note {
+  margin: 0 0 16px;
+  color: var(--accent-on-band);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.65;
+}
 .vote__panel {
   padding: 28px;
   border: 1px solid var(--light-line);
