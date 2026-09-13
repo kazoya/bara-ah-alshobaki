@@ -33,12 +33,9 @@ export async function SiteFooter() {
         <p>{dict.footer.placeholderNote}</p>
         <p className="footer__demo">{dict.demo.disclaimer}</p>
         <p className="footer__contact-line">
-          <span>
-            {contact.email} <small>({contact.emailNote})</small>
-          </span>
-          <span>
-            {contact.phoneDisplay} <small>({contact.phoneNote})</small>
-          </span>
+          <a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer" dir="ltr">
+            WhatsApp {contact.phoneDisplay}
+          </a>
         </p>
       </div>
       <div className="wrap footer__bottom">

@@ -35,17 +35,21 @@ export const brand = {
 } as const;
 
 /**
- * DEMO PLACEHOLDERS — replace with real client contact before launch.
- * Do not treat these as live business channels.
+ * Live WhatsApp for Bara'ah — scan or tap opens chat with a ready greeting.
+ * Number: +962 7 9767 4753 → wa.me digits 962797674753
  */
+const whatsappNumber = "962797674753";
+const whatsappPrefill = "مرحباً أنسة براءة هل تخبرينا عن منتجاتك؟";
+
 export const contact = {
-  email: "demo@bara-ah-alshobaki.example",
-  emailNote: "DEMO PLACEHOLDER",
-  phone: "+962700000000",
-  phoneDisplay: "+962 70 000 0000",
-  phoneNote: "DEMO PLACEHOLDER",
   city: "Amman",
   country: "JO",
+  phone: "+962797674753",
+  phoneDisplay: "+962 7 9767 4753",
+  whatsappNumber,
+  whatsappPrefill,
+  whatsappHref: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappPrefill)}`,
+  whatsappQrSrc: "/images/whatsapp-qr.png",
 } as const;
 
 /**

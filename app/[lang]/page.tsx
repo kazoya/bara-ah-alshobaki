@@ -24,6 +24,7 @@ export default async function Home() {
     alternateName: brand.nameAr,
     url: localePath("", locale),
     description: dict.rootMeta.description,
+    telephone: contact.phone,
     address: {
       "@type": "PostalAddress",
       addressLocality: contact.city,
@@ -328,30 +329,44 @@ export default async function Home() {
               <SplitTitle value={t.contact.title} />
             </h2>
             <p className="section-lede">{t.contact.lede}</p>
-            <p className="contact__demo">{t.contact.demoNote}</p>
+            <p className="contact__demo">{t.contact.whatsappHint}</p>
           </header>
-          <dl className="contact-list reveal">
-            <div>
-              <dt>{t.contact.emailLabel}</dt>
-              <dd>
-                <a href={`mailto:${contact.email}`}>{contact.email}</a>
-                <small> · {contact.emailNote}</small>
-              </dd>
+
+          <div className="whatsapp-card reveal">
+            <a
+              className="whatsapp-card__qr"
+              href={contact.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.contact.whatsappCta}
+            >
+              <Image
+                src={contact.whatsappQrSrc}
+                alt={t.contact.qrAlt}
+                width={240}
+                height={240}
+                sizes="240px"
+              />
+            </a>
+            <div className="whatsapp-card__meta">
+              <p className="whatsapp-card__label">{t.contact.whatsappLabel}</p>
+              <p className="whatsapp-card__number" dir="ltr">
+                {contact.phoneDisplay}
+              </p>
+              <p className="whatsapp-card__prefill">{t.contact.prefillNote}</p>
+              <a
+                className="button button--gold"
+                href={contact.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.contact.whatsappCta} <ArrowOut />
+              </a>
+              <p className="whatsapp-card__loc">
+                {t.contact.locationLabel}: {contact.city}, {contact.country}
+              </p>
             </div>
-            <div>
-              <dt>{t.contact.phoneLabel}</dt>
-              <dd>
-                <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>
-                <small> · {contact.phoneNote}</small>
-              </dd>
-            </div>
-            <div>
-              <dt>{t.contact.locationLabel}</dt>
-              <dd>
-                {contact.city}, {contact.country}
-              </dd>
-            </div>
-          </dl>
+          </div>
         </div>
       </section>
 

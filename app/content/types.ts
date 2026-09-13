@@ -181,10 +181,12 @@ export type Dictionary = {
       eyebrow: string;
       title: SplitHeading;
       lede: string;
-      emailLabel: string;
-      phoneLabel: string;
+      whatsappLabel: string;
+      whatsappHint: string;
+      whatsappCta: string;
+      qrAlt: string;
       locationLabel: string;
-      demoNote: string;
+      prefillNote: string;
     };
   };
 

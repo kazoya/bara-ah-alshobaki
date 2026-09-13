@@ -11,7 +11,7 @@ export const en: Dictionary = {
   demo: {
     badge: "Concept demo under development",
     disclaimer:
-      "This is a conceptual demo. Images are public placeholders, and contact details are fake until real brand materials arrive.",
+      "This site is under development. Some images remain temporary until each maker’s catalogue is complete; WhatsApp contact for Bara'ah is live.",
   },
 
   nav: {
@@ -32,7 +32,7 @@ export const en: Dictionary = {
     contactLabel: "Contact",
     copyrightName: "Bara'ah Alshobaki",
     status: "Concept demo — in development",
-    placeholderNote: "Contact details below are placeholders for display only.",
+    placeholderNote: "Contact Bara'ah on WhatsApp — scan the QR or open the link in the contact section.",
   },
 
   ui: {
@@ -160,22 +160,29 @@ export const en: Dictionary = {
     },
     makers: {
       eyebrow: "Makers on the platform",
-      title: { line1: "Bara'ah & Um Qatada.", em: "Auto product listing." },
-      lede: "After Reem’s space come Bara'ah Alshobaki and Um Qatada — two makers who can insert products automatically once a batch is ready.",
+      title: { line1: "Coming stores.", em: "Links for supporters." },
+      lede: "In the future we will add a store for Um Qatada, and a special link for anyone who paid via Buy Me a Coffee or PayPal (email), then Bara'ah Alshobaki — the idea owner — then Reem Ghattas, and so on.",
       items: [
-        {
-          id: "baraah",
-          name: "Bara'ah Alshobaki",
-          role: "Maker · platform brand",
-          text: "Oils, vinegar, and botanical extracts — the primary identity of the site.",
-          capability: "Auto-list a new product when label and photo are ready",
-        },
         {
           id: "um-qatada",
           name: "Um Qatada",
-          role: "Co-maker",
-          text: "Works with Bara'ah to widen the botanical shelf, and can add her products through the same auto-listing path.",
-          capability: "Same auto-listing path — a ready batch appears on the page",
+          role: "Coming store",
+          text: "Her own storefront on the platform when batches are ready — without writing each listing by hand.",
+          capability: "A dedicated store link, visible to supporters through the donation channels",
+        },
+        {
+          id: "baraah",
+          name: "Bara'ah Alshobaki",
+          role: "Idea owner",
+          text: "The platform’s primary brand — oils, vinegar, and botanical extracts.",
+          capability: "Flagship store after the supporter path is complete",
+        },
+        {
+          id: "reem",
+          name: "Reem Ghattas",
+          role: "Showcase & testimony",
+          text: "Showcase and testimony space on the platform, then her store in the next expansion.",
+          capability: "After Bara'ah — in the coming store sequence",
         },
       ],
     },
@@ -187,7 +194,7 @@ export const en: Dictionary = {
         "Visual landing from brand photography",
         "First product: herbs & extracts (Mum’s balm)",
         "Reem Ghattas: video + demo goods & links",
-        "Bara'ah & Um Qatada: auto product listing (in progress)",
+        "Bara'ah & Um Qatada: coming stores and supporter links",
       ],
     },
     craft: {
@@ -241,12 +248,15 @@ export const en: Dictionary = {
     },
     contact: {
       eyebrow: "Contact",
-      title: { line1: "Write to us.", em: "When channels are ready." },
-      lede: "Contact details below are placeholders for this demo only.",
-      emailLabel: "Email",
-      phoneLabel: "Phone",
+      title: { line1: "Bara'ah on WhatsApp.", em: "Scan or tap." },
+      lede: "Reach Miss Bara'ah directly on WhatsApp — the first message is ready for you.",
+      whatsappLabel: "WhatsApp",
+      whatsappHint:
+        "Scan the QR or open the link — it starts a chat with: مرحباً أنسة براءة هل تخبرينا عن منتجاتك؟",
+      whatsappCta: "Open WhatsApp",
+      qrAlt: "WhatsApp QR code for Bara'ah Alshobaki",
       locationLabel: "Location",
-      demoNote: "Replace these values with Bara'ah’s real details before launch.",
+      prefillNote: "Default message: مرحباً أنسة براءة هل تخبرينا عن منتجاتك؟",
     },
   },
 
