@@ -18,9 +18,10 @@ export const en: Dictionary = {
     mainAria: "Main navigation",
     links: [
       { path: "/products", label: "Products" },
-      { path: "/craft", label: "Craft" },
+      { path: "", label: "Reem Ghattas", hash: "reem" },
+      { path: "", label: "Makers", hash: "makers" },
       { path: "/about", label: "About" },
-      { path: "", label: "Vote", hash: "vote" },
+      { path: "", label: "Support", hash: "vote" },
     ],
     contactLabel: "Contact",
     contactArrow: "↘",
@@ -72,18 +73,30 @@ export const en: Dictionary = {
 
   home: {
     hero: {
-      eyebrow: "Jordanian craft · Botanical products",
-      title: { line1: "The quiet of oil.", em: "The clarity of plant." },
-      lede: "Bara'ah Alshobaki makes oils, vinegar, and botanical extracts with artisan calm — from Jordan to your table.",
-      primaryCta: "Explore products",
-      secondaryCta: "Support completing this",
-      visualAlt: "Olive and botanical atmosphere — placeholder image",
+      eyebrow: "Jordanian craft · Herbs & extracts",
+      title: { line1: "From the olive grove.", em: "To the home jar." },
+      lede: "Bara'ah Alshobaki and Um Qatada — with Reem Ghattas demo goods — on a botanical marketing platform that grows with your generosity.",
+      primaryCta: "First product: herbs & extracts",
+      secondaryCta: "Support ongoing development",
+      visualAlt: "Oil and extract bottles on a stone ledge before an olive grove at sunset",
     },
     products: {
       eyebrow: "Products",
-      title: { line1: "Three lines.", em: "One spirit." },
-      lede: "Oils, vinegar, and botanical extracts — each line carries plant craft without invented awards or unverified seals.",
+      title: { line1: "We begin with herbs.", em: "And extracts." },
+      lede: "The first product on the page is the herbs-and-extracts line — Mum’s balm — then oils and vinegar.",
+      featuredLabel: "First product on the platform",
       items: [
+        {
+          id: "mum-balm",
+          category: "Herbs & extracts",
+          name: "Mum’s botanical balm",
+          summary:
+            "Tried in a personal family story — and more: a doctor’s testimony about what happened to her brother. We are not lying — open the video and press Share to hear it yourself.",
+          image: "/images/product-mum-balm.png",
+          imageAlt: "Green herbal balm jar with oils and extracts before an olive grove",
+          disclaimer: "Personal experience — not medical advice.",
+          featured: true,
+        },
         {
           id: "oils",
           category: "Oils",
@@ -100,16 +113,82 @@ export const en: Dictionary = {
           image: "/images/vinegar.jpg",
           imageAlt: "Vinegar and spices — placeholder",
         },
+      ],
+      viewAll: "View all lines",
+    },
+    partner: {
+      eyebrow: "Demo partner showcase",
+      title: { line1: "Reem Ghattas.", em: "Demo goods & links." },
+      lede: "After the herbs product, we open space for Reem Ghattas: the testimony video, demo goods, and demo links that show how the showcase works before full launch.",
+      name: "Reem Ghattas",
+      videoTitle: "The doctor’s testimony — YouTube",
+      videoUrl: "https://www.youtube.com/watch?v=W9wHX4fmuiQ",
+      videoEmbed: "https://www.youtube-nocookie.com/embed/W9wHX4fmuiQ",
+      demoLinksLabel: "Demo links",
+      demoLinks: [
         {
-          id: "extracts",
-          category: "Extracts",
-          name: "Botanical extracts",
-          summary: "Herb and plant extracts with a calm concentration for kitchen and everyday botanical care.",
-          image: "/images/botanical-herbs.jpg",
-          imageAlt: "Botanical herbs — placeholder",
+          label: "Watch on YouTube",
+          href: "https://www.youtube.com/watch?v=W9wHX4fmuiQ",
+          note: "Direct video link",
+        },
+        {
+          label: "Share the testimony",
+          href: "https://www.youtube.com/watch?v=W9wHX4fmuiQ",
+          note: "Open the video, then Share as invited",
+        },
+        {
+          label: "Vote & support page",
+          href: "#vote",
+          note: "Internal demo on this platform",
         },
       ],
-      viewAll: "View product lines",
+      demoGoodsLabel: "Demo goods",
+      demoGoods: [
+        {
+          name: "Doctor testimony showcase",
+          summary: "Demo narrative tied to the video — for display and development, not a final sales catalogue.",
+        },
+        {
+          name: "Social share pack",
+          summary: "Invites visitors to Share on YouTube and hear the testimony themselves.",
+        },
+        {
+          name: "Platform demo link",
+          summary: "Connects Reem’s story to the vote path and completing the platform through supporters’ generosity.",
+        },
+      ],
+    },
+    makers: {
+      eyebrow: "Makers on the platform",
+      title: { line1: "Bara'ah & Um Qatada.", em: "Auto product listing." },
+      lede: "After Reem’s space come Bara'ah Alshobaki and Um Qatada — two makers who can insert products automatically once a batch is ready.",
+      items: [
+        {
+          id: "baraah",
+          name: "Bara'ah Alshobaki",
+          role: "Maker · platform brand",
+          text: "Oils, vinegar, and botanical extracts — the primary identity of the site.",
+          capability: "Auto-list a new product when label and photo are ready",
+        },
+        {
+          id: "um-qatada",
+          name: "Um Qatada",
+          role: "Co-maker",
+          text: "Works with Bara'ah to widen the botanical shelf, and can add her products through the same auto-listing path.",
+          capability: "Same auto-listing path — a ready batch appears on the page",
+        },
+      ],
+    },
+    progress: {
+      eyebrow: "How far we are",
+      title: { line1: "This far, for now.", em: "The rest with your kindness." },
+      lede: "Development has reached this point: a premium interface, herbs first, Reem Ghattas showcase, and a path for Bara'ah and Um Qatada. Further progress will rely on your generosity — donate so the project can grow with you.",
+      points: [
+        "Visual landing from brand photography",
+        "First product: herbs & extracts (Mum’s balm)",
+        "Reem Ghattas: video + demo goods & links",
+        "Bara'ah & Um Qatada: auto product listing (in progress)",
+      ],
     },
     craft: {
       eyebrow: "Craft",
@@ -147,9 +226,9 @@ export const en: Dictionary = {
     vote: {
       eyebrow: "Support completion",
       title: { line1: "Vote to finish", em: "this product." },
-      lede: "If this demo resonates, vote that you want it completed as a full team product — with a coffee, or a local interest tally.",
+      lede: "If what we have built so far resonates, vote to finish the platform as a team — with a one-dollar coffee. Further progress will rely on your generosity so the project can grow with you.",
       supportNote:
-        "Suggested amount: USD 1 — support for developing the marketing platform, not a product price.",
+        "Suggested amount: USD 1 — support for developing the marketing platform until it grows with your kindness, not a product price.",
       coffeeCta: "Buy me a coffee — $1",
       paypalCta: "PayPal — $1",
       voteCta: "Register my interest",
@@ -196,6 +275,17 @@ export const en: Dictionary = {
     lede: "Three showcase lines — final names and prices arrive with real brand materials.",
     items: [
       {
+        id: "mum-balm",
+        category: "Herbs & extracts",
+        name: "Mum’s botanical balm",
+        summary:
+          "First herbs-and-extracts product on the platform — personal story tied to Reem Ghattas’s video testimony.",
+        image: "/images/product-mum-balm.png",
+        imageAlt: "Herbal balm jar with oils before an olive grove",
+        disclaimer: "Personal experience — not medical advice.",
+        featured: true,
+      },
+      {
         id: "oils",
         category: "Oils",
         name: "Plant oils",
@@ -211,16 +301,8 @@ export const en: Dictionary = {
         image: "/images/vinegar.jpg",
         imageAlt: "Vinegar — placeholder",
       },
-      {
-        id: "extracts",
-        category: "Extracts",
-        name: "Botanical extracts",
-        summary: "Extract line: quiet plant concentration for kitchen and daily care.",
-        image: "/images/botanical-herbs.jpg",
-        imageAlt: "Herbs — placeholder",
-      },
     ],
-    note: "Images are Unsplash placeholders until branded photos with the logo arrive.",
+    note: "The first image is client photography. Remaining images are temporary until Bara'ah and Um Qatada’s catalogues are complete.",
   },
 
   craftPage: {

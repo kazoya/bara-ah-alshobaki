@@ -24,6 +24,38 @@ export type ProductCard = {
   summary: string;
   image: string;
   imageAlt: string;
+  /** Optional caution line (e.g. personal experience, not medical advice). */
+  disclaimer?: string;
+  featured?: boolean;
+};
+
+export type MakerCard = {
+  id: string;
+  name: string;
+  role: string;
+  text: string;
+  capability: string;
+};
+
+export type PartnerDemo = {
+  eyebrow: string;
+  title: SplitHeading;
+  lede: string;
+  name: string;
+  videoTitle: string;
+  videoUrl: string;
+  videoEmbed: string;
+  demoLinksLabel: string;
+  demoLinks: { label: string; href: string; note: string }[];
+  demoGoodsLabel: string;
+  demoGoods: { name: string; summary: string }[];
+};
+
+export type ProgressBand = {
+  eyebrow: string;
+  title: SplitHeading;
+  lede: string;
+  points: string[];
 };
 
 export type CraftStep = {
@@ -105,7 +137,16 @@ export type Dictionary = {
       lede: string;
       items: ProductCard[];
       viewAll: string;
+      featuredLabel: string;
     };
+    partner: PartnerDemo;
+    makers: {
+      eyebrow: string;
+      title: SplitHeading;
+      lede: string;
+      items: MakerCard[];
+    };
+    progress: ProgressBand;
     craft: {
       eyebrow: string;
       title: SplitHeading;

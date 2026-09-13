@@ -279,7 +279,7 @@ h1 em, h2 em { color: var(--accent); font-style: normal; font-weight: 400; }
 }
 .hero__photo {
   object-fit: cover;
-  object-position: center;
+  object-position: 28% 45%;
   filter: saturate(0.85) contrast(1.05);
 }
 .hero__veil {
@@ -528,6 +528,181 @@ h1 em, h2 em { color: var(--accent); font-style: normal; font-weight: 400; }
   background: rgba(20, 38, 26, 0.72);
   font-size: 0.62rem;
   line-height: 1.35;
+}
+.product__disclaimer {
+  margin-top: 14px;
+  color: var(--text-faint);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  border-inline-start: 2px solid var(--accent);
+  padding-inline-start: 12px;
+}
+
+.featured-product {
+  display: grid;
+  gap: 28px;
+  margin-bottom: 52px;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .featured-product { grid-template-columns: 1.15fr 0.85fr; gap: 48px; }
+}
+.featured-product__media {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--surface-alt);
+}
+.featured-product__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 20% 55%;
+  display: block;
+}
+.featured-product__label {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.featured-product__copy h3 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+}
+.featured-product__copy > p:not(.featured-product__label):not(.product__cat):not(.product__disclaimer) {
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+.product-grid--rest {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) {
+  .product-grid--rest { grid-template-columns: repeat(2, 1fr); }
+}
+
+.partner-grid {
+  display: grid;
+  gap: 36px;
+}
+@media (min-width: 960px) {
+  .partner-grid { grid-template-columns: 1.2fr 0.8fr; align-items: start; }
+}
+.partner-video__frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 14px;
+  background: #0b1510;
+}
+.partner-video__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.partner-side { display: grid; gap: 28px; }
+.partner-block h3 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+.partner-goods,
+.partner-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.partner-goods li,
+.partner-links li {
+  padding-block: 14px;
+  border-top: 1px solid var(--line);
+}
+.partner-goods li:last-child,
+.partner-links li:last-child { border-bottom: 1px solid var(--line); }
+.partner-goods strong { display: block; margin-bottom: 4px; }
+.partner-goods span,
+.partner-links small {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+.partner-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.makers-grid {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 760px) {
+  .makers-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+.maker {
+  padding-block: 8px;
+  border-top: 1px solid var(--line);
+}
+.maker__role {
+  margin: 18px 0 8px;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.maker h3 {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+.maker p { margin: 0 0 12px; color: var(--text-muted); line-height: 1.8; }
+.maker__cap {
+  color: var(--text) !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-inline-start: 2px solid var(--brass, var(--accent));
+  padding-inline-start: 12px;
+}
+
+.progress__grid {
+  display: grid;
+  gap: 36px;
+}
+@media (min-width: 900px) {
+  .progress__grid { grid-template-columns: 1.1fr 0.9fr; align-items: end; }
+}
+.progress__copy h2 {
+  margin: 16px 0 18px;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+}
+.progress__points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.progress__points li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 12px;
+  padding-block: 16px;
+  border-top: 1px solid var(--light-line);
+  color: var(--on-band);
+  line-height: 1.65;
+}
+.progress__points li:last-child { border-bottom: 1px solid var(--light-line); }
+.progress__points span {
+  color: var(--accent-on-band);
+  font-family: var(--serif);
 }
 
 .craft-grid {

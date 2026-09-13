@@ -36,11 +36,14 @@ export default async function ProductsPage() {
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <span className="product__ph">{dict.ui.imagePlaceholderNote}</span>
+                  {!item.featured ? (
+                    <span className="product__ph">{dict.ui.imagePlaceholderNote}</span>
+                  ) : null}
                 </div>
                 <p className="product__cat">{item.category}</p>
                 <h3>{item.name}</h3>
                 <p>{item.summary}</p>
+                {item.disclaimer ? <p className="product__disclaimer">{item.disclaimer}</p> : null}
               </article>
             ))}
           </div>

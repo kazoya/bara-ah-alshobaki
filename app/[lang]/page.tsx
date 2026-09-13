@@ -14,6 +14,8 @@ export default async function Home() {
   const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
   const t = dict.home;
   const path = (to: string) => localePath(to, locale);
+  const featured = t.products.items.find((p) => p.featured) ?? t.products.items[0];
+  const rest = t.products.items.filter((p) => p.id !== featured.id);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -40,7 +42,7 @@ export default async function Home() {
       <section className="hero" id="top" aria-labelledby="hero-heading">
         <div className="hero__media" aria-hidden="true">
           <Image
-            src="/images/olive-grove.jpg"
+            src="/images/landing-hero.png"
             alt=""
             fill
             priority
@@ -92,8 +94,30 @@ export default async function Home() {
             <p className="section-lede">{t.products.lede}</p>
           </header>
 
-          <div className="product-grid">
-            {t.products.items.map((item, i) => (
+          <article className="featured-product reveal">
+            <div className="featured-product__media">
+              <Image
+                src={featured.image}
+                alt={featured.imageAlt}
+                width={1200}
+                height={900}
+                sizes="(max-width: 900px) 100vw, 55vw"
+                priority
+              />
+            </div>
+            <div className="featured-product__copy">
+              <p className="featured-product__label">{t.products.featuredLabel}</p>
+              <p className="product__cat">{featured.category}</p>
+              <h3>{featured.name}</h3>
+              <p>{featured.summary}</p>
+              {featured.disclaimer ? (
+                <p className="product__disclaimer">{featured.disclaimer}</p>
+              ) : null}
+            </div>
+          </article>
+
+          <div className="product-grid product-grid--rest">
+            {rest.map((item, i) => (
               <article key={item.id} className="product reveal" style={stagger(i)}>
                 <div className="product__media">
                   <Image
@@ -117,6 +141,119 @@ export default async function Home() {
               {t.products.viewAll} <ArrowOut />
             </Link>
           </p>
+        </div>
+      </section>
+
+      <section className="section section--alt" id="reem" aria-labelledby="reem-heading">
+        <div className="wrap">
+          <header className="section-head reveal">
+            <p className="eyebrow">
+              <span /> {t.partner.eyebrow}
+            </p>
+            <h2 id="reem-heading">
+              <SplitTitle value={t.partner.title} />
+            </h2>
+            <p className="section-lede">{t.partner.lede}</p>
+          </header>
+
+          <div className="partner-grid">
+            <div className="partner-video reveal">
+              <div className="partner-video__frame">
+                <iframe
+                  title={t.partner.videoTitle}
+                  src={t.partner.videoEmbed}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </div>
+              <a
+                className="text-link"
+                href={t.partner.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.partner.videoTitle} <ArrowOut />
+              </a>
+            </div>
+
+            <div className="partner-side">
+              <div className="partner-block reveal">
+                <h3>{t.partner.demoGoodsLabel}</h3>
+                <ul className="partner-goods">
+                  {t.partner.demoGoods.map((g) => (
+                    <li key={g.name}>
+                      <strong>{g.name}</strong>
+                      <span>{g.summary}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="partner-block reveal">
+                <h3>{t.partner.demoLinksLabel}</h3>
+                <ul className="partner-links">
+                  {t.partner.demoLinks.map((l) => (
+                    <li key={l.label}>
+                      <a href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}>
+                        {l.label} <ArrowOut />
+                      </a>
+                      <small>{l.note}</small>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="makers" aria-labelledby="makers-heading">
+        <div className="wrap">
+          <header className="section-head reveal">
+            <p className="eyebrow">
+              <span /> {t.makers.eyebrow}
+            </p>
+            <h2 id="makers-heading">
+              <SplitTitle value={t.makers.title} />
+            </h2>
+            <p className="section-lede">{t.makers.lede}</p>
+          </header>
+          <div className="makers-grid">
+            {t.makers.items.map((m, i) => (
+              <article key={m.id} className="maker reveal" style={stagger(i)}>
+                <p className="maker__role">{m.role}</p>
+                <h3>{m.name}</h3>
+                <p>{m.text}</p>
+                <p className="maker__cap">{m.capability}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--band progress" id="progress" aria-labelledby="progress-heading">
+        <div className="wrap progress__grid">
+          <div className="progress__copy">
+            <p className="eyebrow eyebrow--light reveal">
+              <span /> {t.progress.eyebrow}
+            </p>
+            <h2 id="progress-heading" className="reveal">
+              <SplitTitle value={t.progress.title} />
+            </h2>
+            <p className="section-lede section-lede--light reveal">{t.progress.lede}</p>
+            <a className="button button--gold reveal" href="#vote">
+              {t.hero.secondaryCta} <ArrowOut />
+            </a>
+          </div>
+          <ol className="progress__points">
+            {t.progress.points.map((point, i) => (
+              <li key={point} className="reveal" style={stagger(i)}>
+                <span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                {point}
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -152,8 +289,8 @@ export default async function Home() {
         <div className="wrap about-grid">
           <div className="about__media reveal">
             <Image
-              src="/images/oil-pour.jpg"
-              alt={dict.ui.imagePlaceholderNote}
+              src="/images/product-mum-balm.png"
+              alt={featured.imageAlt}
               width={900}
               height={1100}
               sizes="(max-width: 900px) 100vw, 42vw"
